@@ -1,0 +1,15 @@
+{
+  "extends": ["tslint-config-airbnb"],
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "max-line-length": false,
+    "import-name": false,
+    "strict-boolean-expressions": false
+  },
+  "parserOptions": {
+    "ecmaVersion": 8
+  }
+}
