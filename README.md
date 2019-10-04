@@ -13,7 +13,7 @@ npm install --save-dev serverless-plugin-tag-cloud-watch-logs
 
 In your serverless template:
 
-```
+```yaml
 custom:
   cloudWatchLogsTags:
     TagName1: TagValue1
@@ -25,10 +25,22 @@ plugins:
 
 Or if you if you already have tags for your stack in another place :
 
-```
+```yaml
 custom:
   cloudWatchLogsTags:${self:provider.<your_tags>}
 
 plugins:
   - serverless-plugin-tag-cloud-watch-logs
+```
+
+This plugin also allow you to add tags retrieved from your lambda resources.  
+To do so, you just have to add these lines into your serverless template:
+
+```yaml
+custom:
+  addLambdaTagsOnLogGroups: true
+  customTagsFromLambda:
+    - "first_tag"
+    - "second_tag"
+    ...
 ```

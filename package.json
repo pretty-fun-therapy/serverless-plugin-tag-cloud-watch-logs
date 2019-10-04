@@ -29,11 +29,8 @@
     "dist/*.js"
   ],
   "license": "MIT",
-  "dependencies": {
-    "lodash": "^4.17.5"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@types/lodash": "^4.14.141",
     "@types/node": "^12.7.9",
     "@types/serverless": "^1.18.4",
     "serverless": "^1.53.0",
