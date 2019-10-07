@@ -3,15 +3,17 @@
   "version": "1.0.7",
   "description": "Serverless plugin to tag CloudWatchLogs",
   "main": "dist/index.js",
-  "engines": {
-    "node": ">=4.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/pretty-fun-therapy/serverless-plugin-tag-cloud-watch-logs"
   },
+  "engines": {
+    "node": ">= 8.9.0"
+  },
   "scripts": {
-    "lint": "tslint --project .",
+    "lint": "nps lint",
+    "npmrc": "echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc",
+    "nps": "nps",
     "build": "tsc --project ."
   },
   "keywords": [
@@ -33,6 +35,7 @@
   "devDependencies": {
     "@types/node": "^12.7.9",
     "@types/serverless": "^1.18.4",
+    "nps": "^5.9.8",
     "serverless": "^1.53.0",
     "ts-node": "^8.4.1",
     "tslint": "^5.20.0",

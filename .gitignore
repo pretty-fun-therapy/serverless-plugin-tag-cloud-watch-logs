@@ -3,6 +3,7 @@
 *.iml
 **/.serverless
 dist/
+.npmrc
 
 # Logs
 logs
