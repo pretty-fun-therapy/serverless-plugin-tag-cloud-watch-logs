@@ -69,7 +69,7 @@ workflows:
             branches:
               only:
                 - master
-      - publish:
+      - publish-approval:
           type: approval
           requires:
             - build
@@ -77,3 +77,6 @@ workflows:
             branches:
               only:
                 - master
+      - publish:
+          requires:
+            - publish-approval
