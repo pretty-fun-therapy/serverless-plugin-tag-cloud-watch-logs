@@ -1,16 +1,13 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
-version: 2
+version: 2.1
 
 defaults: &defaults
-  working_directory: ~/home/circleci/server-plugin-tag-cloud-watch-tags
   docker:
     - image: prettyfuntherapy/node-10-x-standard-ci
+  working_directory: /home/circleci/server-plugin-tag-cloud-watch-logs
 
 jobs:
   install:
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
@@ -25,14 +22,14 @@ jobs:
           paths:
             - "node_modules"
       - persist_to_workspace:
-          root: " ~/home/circleci"
+          root: "/home/circleci"
           paths:
             - "server-plugin-tag-cloud-watch-logs"
   build:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: " ~/home/circleci"
+          at: "/home/circleci"
       - restore_cache:
           keys:
             - prod-node-modules-{{ checksum "package-lock.json" }}
@@ -44,7 +41,7 @@ jobs:
           paths:
             - "dist/node_modules"
       - persist_to_workspace:
-          root: " ~/home/circleci"
+          root: "/home/circleci"
           paths:
             -  server-plugin-tag-cloud-watch-logs/dist
 
@@ -52,13 +49,13 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at:  ~/home/circleci
+          at: /home/circleci
       - run:
           name: Authenticate with registry
-          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+          command: npm run npmrc
       - run:
           name: Publish package
-          command: npm publish
+          command: npm --unsafe-perm --access public publish
 
 workflows:
   version: 2
@@ -71,11 +68,12 @@ workflows:
           filters:
             branches:
               only:
-                - release
+                - master
       - publish:
+          type: approval
           requires:
             - build
           filters:
             branches:
               only:
-                - release
+                - master

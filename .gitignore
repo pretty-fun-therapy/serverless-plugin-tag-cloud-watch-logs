@@ -4,6 +4,7 @@
 **/.serverless
 dist/
 .npmrc
+.envrc
 
 # Logs
 logs
