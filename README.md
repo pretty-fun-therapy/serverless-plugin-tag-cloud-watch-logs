@@ -2,16 +2,14 @@
 Serverless plugin to tag CloudWatchLogs
 
 ## Installation
-
 Install the plugin via <a href="https://docs.npmjs.com/cli/install">NPM</a>
 
 ```
-npm install --save-dev serverless-plugin-tag-cloud-watch-logs
+npm install --save-dev @pretty-fun-therapy/serverless-plugin-tag-cloud-watch-logs
 ```
 
 ## Usage
-
-In your serverless template:
+In your serverless template :
 
 ```yaml
 custom:
@@ -20,7 +18,7 @@ custom:
     TagName2: TagValue2
 
 plugins:
-  - serverless-plugin-tag-cloud-watch-logs
+  - @pretty-fun-therapy/serverless-plugin-tag-cloud-watch-logs
 ```
 
 Or if you if you already have tags for your stack in another place :
@@ -30,11 +28,11 @@ custom:
   cloudWatchLogsTags:${self:provider.<your_tags>}
 
 plugins:
-  - serverless-plugin-tag-cloud-watch-logs
+  - @pretty-fun-therapy/serverless-plugin-tag-cloud-watch-logs
 ```
 
 This plugin also allow you to add tags retrieved from your lambda resources.  
-To do so, you just have to add these lines into your serverless template:
+To do so, you just have to add these lines into your serverless template :
 
 ```yaml
 custom:
