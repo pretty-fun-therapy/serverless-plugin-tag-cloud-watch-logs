@@ -18,9 +18,10 @@ class ServerlessCloudWatchLogsTagPlugin {
     this.options = options;
     this.awsService = this.serverless.getProvider('aws');
 
-    this.cloudFormationService = new this.awsService.sdk.CloudFormation({ region: this.options.region });
-    this.cloudWatchLogsService = new this.awsService.sdk.CloudWatchLogs({ region: this.options.region });
-    this.lambdaService = new this.awsService.sdk.Lambda({ region: this.options.region });
+    const region = this.awsService.getRegionSourceValue();
+    this.cloudFormationService = new this.awsService.sdk.CloudFormation({ region });
+    this.cloudWatchLogsService = new this.awsService.sdk.CloudWatchLogs({ region });
+    this.lambdaService = new this.awsService.sdk.Lambda({ region });
 
     this.hooks = {
       'after:deploy:deploy': this.execute.bind(this),
