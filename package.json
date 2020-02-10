@@ -1,6 +1,6 @@
 {
   "name": "@pretty-fun-therapy/serverless-plugin-tag-cloud-watch-logs",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Serverless plugin to tag CloudWatchLogs",
   "main": "dist/index.js",
   "repository": {
