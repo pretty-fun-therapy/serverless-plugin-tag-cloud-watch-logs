@@ -18,7 +18,7 @@ custom:
     TagName2: TagValue2
 
 plugins:
-  - @pretty-fun-therapy/serverless-plugin-tag-cloud-watch-logs
+  - '@pretty-fun-therapy/serverless-plugin-tag-cloud-watch-logs'
 ```
 
 Or if you if you already have tags for your stack in another place :
