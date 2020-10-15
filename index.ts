@@ -29,7 +29,7 @@ class ServerlessCloudWatchLogsTagPlugin {
   }
 
   private get stackName(): string {
-    return `${this.serverless.service['service']}-${this.options.stage}`;
+    return this.awsService.naming.getStackName();
   }
 
   execute(): Promise<any[]> {
