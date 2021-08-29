@@ -63,7 +63,7 @@ class ServerlessCloudWatchLogsTagPlugin {
       return new Promise(async (resolve, _) => {
         const params = {
           logGroupName: resource.PhysicalResourceId,
-          tags: custom.cloudWatchLogsTags,
+          tags: { ...custom.cloudWatchLogsTags },
         } as TagLogGroupsParams;
         if (custom.addLambdaTagsOnLogGroups && custom.customTagsFromLambda) {
           await this.handleTagsFromLambda(resource, custom.customTagsFromLambda, params);
