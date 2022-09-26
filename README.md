@@ -1,6 +1,10 @@
 # serverless-plugin-tag-cloud-watch-logs
 Serverless plugin to tag CloudWatchLogs
 
+## :warning: THIS PROJECT IS DEPRECATED
+
+As an alternative with similar features, we suggest using [serverless-tag-cloud-watch-logs](https://github.com/gfragoso/serverless-tag-cloud-watch-logs).
+
 ## Installation
 Install the plugin via <a href="https://docs.npmjs.com/cli/install">NPM</a>
 
