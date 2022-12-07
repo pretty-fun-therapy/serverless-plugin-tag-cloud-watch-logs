@@ -36,7 +36,7 @@
     "@types/node": "^12.7.9",
     "@types/serverless": "^1.18.4",
     "nps": "^5.9.8",
-    "serverless": "^1.53.0",
+    "serverless": "^3.25.1",
     "ts-node": "^8.4.1",
     "tslint": "^5.20.0",
     "tslint-config-airbnb": "^5.11.2",
